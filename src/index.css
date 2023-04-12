@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p{
+    font-size: 1.3rem;
 }
+
+p1{
+    font-size: 1rem;
+}
+
+h1{
+    font-size: 3rem;
+}
+hr{
+    height: 2.5px;
+    border-width: 0;
+    background-color: #f8f8f8;
+    width: 100%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.app{
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    color: azure;
+}
+
+.container{
+    max-width: 700px;
+    ///height: 600px;
+    margin: auto;
+    padding: 0.1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app .middle{
+    height: 350px;
+}
+
+.middle .search{
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    height: 100px;
+}
+
+.middle input{
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2);
+    color: #f8f8f8;
+}
+
+::placeholder{
+    color: #f8f8f8;
+}
+
+.middle .location{
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.middle .details{
+    display: flex;
+    justify-content: space-evenly;
+    ///text-align: left;
+    width: 100%;
+    padding: 0.3rem;
+}
+
+.middle .details .description{
+    text-align: center;
+    line-height: 0.1;
+}
+
+.middle .details .temperature {
+    text-align: center;
+    padding: 1rem;
+    ///margin: 0 auto;
+}
+
+.middle .details .more{
+
+    text-align: center;
+    line-height: 1.4;
+
+}
+
+
+.bottom{
+    margin: 0;
+    padding: 0;
+}
+
+.bottom .forecast{
+    display: flex;
+    margin: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+
