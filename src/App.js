@@ -13,6 +13,7 @@ import {
     UilTear,
     UilWind,
 } from "@iconscout/react-unicons"
+import FavoriteCities from "./components/FavoriteCities";
 
 
 
@@ -64,11 +65,32 @@ function App() {
 
     }
 
+    const getFavouriteLocation = (city) => {
+
+        const newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=afd21f85d53737015ccf714380d168fc`;
+        const newforecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=afd21f85d53737015ccf714380d168fc`
+
+        axios.get(newUrl).then((response) => {
+            setData(response.data)
+            console.log(response.data)
+            setThemeFeature(response.data)
+        });
+        axios.get(newforecastUrl).then((response) =>{
+            const forecastList = response.data.list.filter((weather) => {
+                return new Date(weather.dt_txt).getHours() === 12;
+            })
+            setForecastData(forecastList);
+        })
+        setLocation('')
+    }
+
     return (
         <div className="app" style={{backgroundImage: `url(${theme})`}}>
             <div className="container">
                 <div className="top">
                     <div className="favorites">
+                        <h3>List of favorites cities</h3>
+                        <FavoriteCities sendCity = {getFavouriteLocation}/>
                     </div>
                 </div>
 
@@ -90,13 +112,6 @@ function App() {
                     <div className="details">
                         <div className="description">
                             {data.weather ? <p>{data.weather[0].main}</p> : null}
-                            {data.name != undefined &&
-                                <img src={"http://openweathermap.org/img/wn/01d@2x.png"}
-                                 alt=""
-                                 width="100"
-                                 height="100"
-                             />}
-
                         </div>
 
                         <div className="temperature">

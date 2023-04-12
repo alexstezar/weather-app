@@ -46,8 +46,54 @@ hr{
     justify-content: space-between;
 }
 
+.top .favorites{
+    text-align: center;
+}
+
+.add-button {
+    color: white;
+    background-color: #1f1f1f;
+    width: 90px;
+    height: 35px;
+    border: none;
+}
+
+.add-button:hover {
+    background-color: #7c7c7c;
+}
+
+.remove-button {
+    color: white;
+    background-color: #1f1f1f;
+    width: 60px;
+    height: 25px;
+    margin-left: 4px;
+    border: none;
+}
+
+.remove-button:hover {
+    background-color: #7c7c7c;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city-name {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.city-name:hover {
+    color: #727171;
+}
+
+
 .app .middle{
-    height: 350px;
+    height: 200px;
 }
 
 .middle .search{
@@ -104,8 +150,9 @@ hr{
 
 
 .bottom{
-    margin: 0;
+    margin-top: 130px;
     padding: 0;
+
 }
 
 .bottom .forecast{
